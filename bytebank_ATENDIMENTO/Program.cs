@@ -70,5 +70,5 @@ void TestaArrayContaCorrentes()
     listaDeContas.Adicionar(new ContaCorrente(924));
     listaDeContas.Adicionar(new ContaCorrente(934));
 
-    
+    Console.WriteLine(listaDeContas.ContaComMaiorSaldo());
 }

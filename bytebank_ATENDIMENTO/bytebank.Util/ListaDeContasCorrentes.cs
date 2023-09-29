@@ -41,5 +41,20 @@ namespace bytebank_ATENDIMENTO.bytebank.Util
             }
             _contas = novaListaDeContas;
         }
+
+        public ContaCorrente ContaComMaiorSaldo ()
+        {
+            ContaCorrente contaComMaiorSaldo = null;
+            double maiorSaldo = 0;
+            for(int i = 0; i < _contas.Length; i++)
+            {
+                if (_contas[i].Saldo > maiorSaldo)
+                {
+                    contaComMaiorSaldo = _contas[i];
+                }
+            }
+
+            return contaComMaiorSaldo;
+        }
     }
 }
