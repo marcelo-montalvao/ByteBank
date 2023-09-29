@@ -10,6 +10,7 @@ amostra.SetValue(6.9, 4);
 amostra.SetValue(6.7, 5);
 
 TestaMediana(amostra);
+TestaMedia(amostra);
 void TestaMediana (Array array)
 {
     if(array == null || array.Length == 0)
@@ -30,4 +31,23 @@ void TestaMediana (Array array)
 
     Console.WriteLine($"Com base na amostra, a mediana é: {mediana}.");
 
+}
+
+double TestaMedia(Array array)
+{
+    if (array == null || array.Length == 0)
+    {
+        Console.WriteLine("Array para cálculo da média está vazio ou nulo.");
+        return 0;
+    }
+
+    double somaItens = 0;
+    foreach (double valor in array)
+    {
+        somaItens += valor;
+    }
+
+    double media = somaItens / array.Length;
+    Console.WriteLine($"Com base na amostra, a média simples é: {media}.");
+    return media;
 }
