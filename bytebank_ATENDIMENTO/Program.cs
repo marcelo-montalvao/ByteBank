@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
+﻿using bytebank.Modelos.Conta;
+
+Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
 
 
 Array amostra = Array.CreateInstance(typeof(double), 6);
@@ -9,8 +11,11 @@ amostra.SetValue(10, 3);
 amostra.SetValue(6.9, 4);
 amostra.SetValue(6.7, 5);
 
+
 TestaMediana(amostra);
 TestaMedia(amostra);
+TestaArrayContaCorrentes();
+
 void TestaMediana (Array array)
 {
     if(array == null || array.Length == 0)
@@ -50,4 +55,20 @@ double TestaMedia(Array array)
     double media = somaItens / array.Length;
     Console.WriteLine($"Com base na amostra, a média simples é: {media}.");
     return media;
+}
+
+
+void TestaArrayContaCorrentes()
+{
+    ContaCorrente[] listaDeContas = new ContaCorrente[]
+    {
+        new ContaCorrente(874),
+        new ContaCorrente(874),
+        new ContaCorrente(874)
+    };
+
+    foreach (ContaCorrente contaAtual in listaDeContas)
+    {
+        Console.WriteLine(contaAtual);
+    }
 }
