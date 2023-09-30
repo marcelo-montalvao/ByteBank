@@ -9,6 +9,15 @@ namespace bytebank_ATENDIMENTO.bytebank.Util
 {
     public class ListaDeContasCorrentes
     {
+
+        public int Tamanho
+        {
+            get
+            {
+                return _proxPosicao;
+            }
+        }
+
         private ContaCorrente[] _contas = null;
         private int _proxPosicao = 0;
 
@@ -87,6 +96,24 @@ namespace bytebank_ATENDIMENTO.bytebank.Util
                     ContaCorrente contaAtual = _contas[i];
                     Console.WriteLine($"Indice: {i} = Conta: {contaAtual.Conta} - Nº Agencia: {contaAtual.Numero_agencia}");
                 }
+            }
+        }
+
+        public ContaCorrente RetornaContaPorIndice(int indiceConta)
+        {
+            if (indiceConta < 0 || indiceConta >= _proxPosicao)
+            {
+                throw new ArgumentOutOfRangeException(nameof(indiceConta));
+            }
+
+            return _contas[indiceConta];
+        }
+
+        public ContaCorrente this[int indiceConta]
+        {
+            get
+            {
+                return RetornaContaPorIndice(indiceConta);
             }
         }
     }

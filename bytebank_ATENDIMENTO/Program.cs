@@ -78,4 +78,11 @@ void TestaArrayContaCorrentes()
     listaDeContas.ExibeLista();
 
     Console.WriteLine(listaDeContas.ContaComMaiorSaldo());
+
+    for (int i = 0; i < listaDeContas.Tamanho; i++)
+    {
+        ContaCorrente conta = listaDeContas[i];
+        Console.WriteLine($"Indice [{i}]: {conta.Conta}/{conta.Numero_agencia}");
+
+    }
 }
