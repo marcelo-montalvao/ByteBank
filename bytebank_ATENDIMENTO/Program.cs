@@ -86,3 +86,28 @@ void TestaArrayContaCorrentes()
 
     }
 }
+
+List<string> nomesDosEscolhidos = new List<string>()
+{
+    "Bruce Wayne",
+    "Carlos Vilagran",
+    "Richard Grayson",
+    "Bob Kane",
+    "Will Farrel",
+    "Lois Lane",
+    "General Welling",
+    "Perla Letícia",
+    "Uxas",
+    "Diana Prince",
+    "Elisabeth Romanova",
+    "Anakin Wayne"
+};
+
+bool VerificaSeNomeExiste(List<string> lista, string nome)
+{
+    return lista.Contains(nome);
+}
+
+
+Console.WriteLine(VerificaSeNomeExiste(nomesDosEscolhidos, "Anakin Wayne"));
+Console.WriteLine(VerificaSeNomeExiste(nomesDosEscolhidos, "Jorge Miguel"));
